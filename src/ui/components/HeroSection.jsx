@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input" 
+import Footer from './Footer'
 import { 
   ArrowRight, 
   Code, 
@@ -308,51 +309,10 @@ const HeroSection = () => {
         </section>
 
         {/* Developer CTA */}
-        <section className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="relative overflow-hidden bg-gradient-to-r from-primary/5 via-blue-500/5 to-purple-500/5 border-primary/20">
-              <div className="absolute inset-0 bg-grid-white/5" />
-              
-              <CardContent className="relative p-12 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur border border-primary/30 mb-6">
-                  <Code className="w-8 h-8 text-primary" />
-                </div>
-                
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Ready to Share Your Knowledge?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Whether you're a junior developer with fresh insights or a senior engineer with years of experience, 
-                  your perspective matters. Help fellow developers learn and grow.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg" 
-                    className="h-12 px-8 bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 group"
-                  >
-                    <Lightbulb className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                    Write Your First Article
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="h-12 px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300"
-                  >
-                    <Share2 className="mr-2 h-5 w-5" />
-                    Join Community
-                  </Button>
-                </div>
-                
-                <p className="text-sm text-muted-foreground mt-6">
-                  No experience required • Markdown support • Code syntax highlighting
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
       </div>
+        {/* Footer */} 
+        <Footer />
     </div>
   )
 }
