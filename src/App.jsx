@@ -17,8 +17,9 @@ export default function App() {
         <Route index element={<HeroSection />} /> 
         <Route path='/login' element={<LoginPage/>} /> 
         <Route path='/dashboard' element={<DashboardLayout />} />
-        <Route path='/mde' element={<Mde/>} />
-      </Route>
+      </Route> 
+              <Route path='/mde' element={<Mde/>} />
+
       </Routes>
     </BrowserRouter>
    </>
