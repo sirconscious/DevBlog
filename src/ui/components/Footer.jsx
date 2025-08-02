@@ -113,7 +113,7 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="flex flex-row items-center justify-center bg-gradient-to-r from-primary/5 via-blue-500/5 to-purple-500/5 border-b border-border/20">
+        <div className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-r from-primary/5 via-blue-500/5 to-purple-500/5 border-b border-border/20">
 
        
         <section className="container mx-auto px-4 py-16">
