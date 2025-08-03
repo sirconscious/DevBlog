@@ -176,14 +176,16 @@ const Navbar = () => {
               <div className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full animate-pulse" />
             </Button>
 
-            {/* Write Button */}
+            {/* Write Button */} 
+            <Link to="/mde">
             <Button 
               size="sm" 
               className="hidden md:flex h-9 px-4 bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all duration-300 group"
-            >
+              >
               <Edit3 className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
               Write
             </Button>
+              </Link>
 
             {/* User Menu */}
             <DropdownMenu>

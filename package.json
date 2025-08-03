@@ -41,6 +41,7 @@
     "react-mde": "^11.5.0",
     "react-router-dom": "^7.7.1",
     "react-simplemde-editor": "^5.2.0",
+    "react-three": "^0.9.7",
     "recharts": "^2.15.4",
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",

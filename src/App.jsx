@@ -6,7 +6,9 @@ import LoginPage from './ui/components/pages/LoginPage'
 import MainLayout from './ui/components/Layouts/MainLayout' 
 import HeroSection from './ui/components/HeroSection' 
 import DashboardLayout from './ui/components/Layouts/DashboardLayout'
+import AboutPage from './ui/components/pages/AboutPage'
 import Mde from './ui/components/Mde'
+import CommunityPage from './ui/components/pages/CommunityPage'
 export default function App() {
   return (
    <>
@@ -17,9 +19,11 @@ export default function App() {
         <Route index element={<HeroSection />} /> 
         <Route path='/login' element={<LoginPage/>} /> 
         <Route path='/dashboard' element={<DashboardLayout />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/community' element={<CommunityPage />} />
+     
       </Route> 
               <Route path='/mde' element={<Mde/>} />
-
       </Routes>
     </BrowserRouter>
    </>
