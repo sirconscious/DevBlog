@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Link } from 'react-router-dom'
 import { 
   Search,
   Filter,
@@ -422,7 +423,8 @@ const ArticlesPage = () => {
   }
 
   const ArticleCard = ({ article }) => (
-    <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 cursor-pointer overflow-hidden">
+    <Link to={`/article/${article.id}`}>
+      <Card className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 cursor-pointer overflow-hidden">
       <CardContent className="p-0">
         {/* Cover Image */}
         <div className="relative h-48 overflow-hidden">
@@ -550,10 +552,12 @@ const ArticlesPage = () => {
         </div>
       </CardContent>
     </Card>
+    </Link>
   )
 
   const ArticleListItem = ({ article }) => (
-    <Card className="group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 cursor-pointer">
+    <Link to={`/article/${article.id}`}>
+      <Card className="group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 cursor-pointer">
       <CardContent className="p-6">
         <div className="flex gap-6">
           {/* Cover Image */}
@@ -667,6 +671,7 @@ const ArticlesPage = () => {
         </div>
       </CardContent>
     </Card>
+    </Link>
   )
 
   return (

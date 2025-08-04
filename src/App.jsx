@@ -10,6 +10,7 @@ import AboutPage from './ui/components/pages/AboutPage'
 import Mde from './ui/components/Mde'
 import CommunityPage from './ui/components/pages/CommunityPage'
 import ArticlesPage from './ui/components/pages/ArticlesPage'
+import ArticleDetailPage from './ui/components/pages/ArticleDetailPage'
 export default function App() {
   return (
    <>
@@ -23,6 +24,7 @@ export default function App() {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/community' element={<CommunityPage />} />
         <Route path='/articles' element={<ArticlesPage />} />
+        <Route path='/article/:id' element={<ArticleDetailPage />} />
      
       </Route> 
               <Route path='/mde' element={<Mde/>} />
