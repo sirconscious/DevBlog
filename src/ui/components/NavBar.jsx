@@ -80,10 +80,10 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    { title: "Articles", href: "#articles", icon: BookOpen },
+    { title: "Articles", href: "/articles", icon: BookOpen },
     { title: "Topics", href: "#topics", icon: Code },
-    { title: "Community", href: "#community", icon: Users },
-    { title: "About", href: "#about", icon: MessageSquare },
+    { title: "Community", href: "/community", icon: Users },
+    { title: "About", href: "/about", icon: MessageSquare },
   ]
 
   const userMenuItems = [
@@ -132,14 +132,14 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.href}
+                to={item.href}
                 className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-accent hover:text-primary hover:scale-105 group"
               >
                 <item.icon className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                 {item.title}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -242,15 +242,15 @@ const Navbar = () => {
                   {/* Mobile Navigation */}
                   <div className="space-y-2">
                     {navItems.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.href}
+                        to={item.href}
                         className="flex items-center gap-3 px-4 py-3 text-lg font-medium transition-all duration-300 rounded-lg hover:bg-accent hover:text-primary group"
                         onClick={() => setIsOpen(false)}
                       >
                         <item.icon className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                         {item.title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
 

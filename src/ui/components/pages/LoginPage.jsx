@@ -44,13 +44,22 @@ const LoginPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
+  
+  // Fixed: Better environment variable handling with fallback
+  const googleAuthUrl = import.meta.env.VITE_AUTH_REDIRECT_URI || 'http://127.0.0.1:8000/auth/google/redirect'
+  
   const handleLogin = () => {
     setIsLoading(true)
     // Simulate login process
     setTimeout(() => {
       setIsLoading(false)
     }, 2000)
+  }
+
+  // Fixed: Handle Google OAuth redirect
+  const handleGoogleLogin = () => {
+    console.log('Redirecting to Google OAuth:', googleAuthUrl) // Debug log
+    window.location.href = googleAuthUrl
   }
 
   const communityStats = [
@@ -263,7 +272,7 @@ const LoginPage = () => {
                 </div>
               </div>
 
-              {/* Social Login */}
+              {/* Social Login - FIXED */}
               <div className="grid grid-cols-2 gap-3">
                 <Button 
                   variant="outline" 
@@ -272,10 +281,13 @@ const LoginPage = () => {
                   <Github className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                   GitHub
                 </Button>
+                
+                {/* Fixed: Removed <a> tag wrapper and added onClick handler */}
                 <Button 
                   variant="outline" 
-                  className="h-12 hover:bg-accent hover:scale-105 transition-all duration-300 group"
-                >
+                  onClick={handleGoogleLogin}
+                  className="w-full h-12 hover:bg-accent hover:scale-105 transition-all duration-300 group"
+                > 
                   <Chrome className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                   Google
                 </Button>
@@ -293,6 +305,11 @@ const LoginPage = () => {
               </div>
             </CardFooter>
           </Card>
+
+          {/* Debug Info - Remove in production */}
+          <div className="mt-4 p-3 bg-muted/50 rounded-lg text-xs font-mono text-muted-foreground">
+            <strong>Debug:</strong> Google Auth URL: {googleAuthUrl}
+          </div>
 
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mt-8">

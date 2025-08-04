@@ -9,6 +9,7 @@ import DashboardLayout from './ui/components/Layouts/DashboardLayout'
 import AboutPage from './ui/components/pages/AboutPage'
 import Mde from './ui/components/Mde'
 import CommunityPage from './ui/components/pages/CommunityPage'
+import ArticlesPage from './ui/components/pages/ArticlesPage'
 export default function App() {
   return (
    <>
@@ -21,6 +22,7 @@ export default function App() {
         <Route path='/dashboard' element={<DashboardLayout />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/community' element={<CommunityPage />} />
+        <Route path='/articles' element={<ArticlesPage />} />
      
       </Route> 
               <Route path='/mde' element={<Mde/>} />
