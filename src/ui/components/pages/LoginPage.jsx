@@ -47,7 +47,7 @@ const LoginPage = () => {
   
   // Fixed: Better environment variable handling with fallback
   const googleAuthUrl = import.meta.env.VITE_AUTH_REDIRECT_URI || 'http://127.0.0.1:8000/auth/google/redirect'
-  
+  const githubAuthUrl = import.meta.env.VITE_GITHUB_AUTH_REDIRECT_URI 
   const handleLogin = () => {
     setIsLoading(true)
     // Simulate login process
@@ -61,7 +61,11 @@ const LoginPage = () => {
     console.log('Redirecting to Google OAuth:', googleAuthUrl) // Debug log
     window.location.href = googleAuthUrl
   }
-
+  const handleGithubLogin = () => {
+    console.log('Redirecting to GitHub OAuth') // Debug log
+    // Implement GitHub OAuth redirect logic here 
+    window.location.href = githubAuthUrl
+  }
   const communityStats = [
     { label: "Developers", value: "25K+", icon: Users },
     { label: "Articles", value: "12K+", icon: Code },
@@ -274,7 +278,8 @@ const LoginPage = () => {
 
               {/* Social Login - FIXED */}
               <div className="grid grid-cols-2 gap-3">
-                <Button 
+                <Button  
+                onClick={handleGithubLogin}
                   variant="outline" 
                   className="h-12 hover:bg-accent hover:scale-105 transition-all duration-300 group"
                 >
